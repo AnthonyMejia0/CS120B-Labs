@@ -5,14 +5,11 @@
  * Author : Antho
  */ 
 
-#define F_CPU 125000UL
-
 #include <avr/io.h>
-#include <util/delay.h>
 #include "Timer.h"
 
 enum States{Start, init, forward, reverse, stop}state;
-	
+		
 unsigned char button;
 	
 
