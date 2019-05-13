@@ -127,16 +127,15 @@ void checkInput() {
 
 int main(void)
 {
-	DDRA = 0x00; PORTA = 0xFF;
+	DDRA = 0xFF; PORTA = 0x00;
 	DDRC = 0xFF; PORTC = 0x00;
-	DDRD = 0xFF; PORTD = 0x00;
 
 	state = Start;
 	
 	LCD_init();
 	
-	A0_button = 0x00;
-	A1_button = 0x00;
+	//A0_button = 0x00;
+	//A1_button = 0x00;
 	tick();
 	LCD_WriteData(currentValue + '0');
 	
@@ -148,7 +147,7 @@ int main(void)
 			checkInput();
 		}
 		TimerFlag = 0;
-		
+		/*
 		if (buttons) {
 			A0_button = buttons & 0x01;
 			A1_button = buttons & 0x02;
@@ -158,7 +157,7 @@ int main(void)
 			LCD_WriteData(currentValue + '0');
 			
 			buttons = 0x00;
-		}
+		}*/
 	}
    
 	return 0;
